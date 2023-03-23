@@ -1,0 +1,17 @@
+replicaCount: 3
+
+image:
+  repository: ksouvatzidaki/devops-exercise
+  tag: latest
+
+service:
+  name: api
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+
+namespace:
+  create: true
+  name: myns
