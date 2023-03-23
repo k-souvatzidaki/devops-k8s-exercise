@@ -1,4 +1,7 @@
 k3d cluster create mycluster
+kubectl config use-context k3d-mycluster
+# verify that the created cluster is the current cluster
+kubectl config current-context
 
 # Docker build and push
 docker build -t devops-exercise . 
@@ -9,7 +12,6 @@ docker push ksouvatzidaki/devops-exercise
 # Deploy k8s manifests
 kubectl create namespace myns
 
-cd /home/konstantina/Desktop/XM_devops_exercise
 helm install devops-exercise ./devops-exercise-chart --namespace myns
 
 
